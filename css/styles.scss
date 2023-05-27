@@ -1,0 +1,165 @@
+@import "typo";
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+$main-green: #3eaa49;
+
+@mixin bringUp {
+  position: relative;
+  z-index: 2;
+}
+
+.main-wrap {
+  height: 100vh;
+  background-image: url("/images/bg.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 350px;
+    @include bringUp;
+  }
+
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+    color: $main-green;
+    @include bringUp;
+  }
+
+  @media only screen and (max-width: 768px) {
+    &:before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.social-links {
+  position: fixed;
+  bottom: 50px;
+  a {
+    text-decoration: none;
+    font-size: 25px;
+    color: $main-green;
+    transition: all ease 0.5s;
+    margin: 0 10px;
+  }
+
+  a:hover {
+    color: darken($main-green, 10%);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-wrap {
+    h1 {
+      color: #ffffff;
+      font-size: 20px;
+    }
+  }
+
+  .social-links {
+    a {
+      color: #ffffff;
+    }
+  }
+}
+
+// Detail page
+
+.main-wrap.details {
+  height: auto;
+  background-attachment: fixed;
+
+  &:before {
+    content: none;
+  }
+}
+
+.detail-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffffe0;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 5px 1px #c1c1c1;
+
+  h1 {
+    margin-bottom: 25px;
+    color: #3eaa49;
+  }
+  h3 {
+    margin: 15px 0 10px;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  &__logo {
+    text-align: center;
+
+    img {
+      width: 250px;
+    }
+  }
+
+  .updated-at {
+    text-align: right;
+    color: gray;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    &__logo {
+      img {
+        width: 190px;
+      }
+    }
+  }
+}
+
+.links {
+  position: fixed;
+  top: 50px;
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    color: $main-green;
+    transition: all ease 0.5s;
+    margin: 0 10px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: darken($main-green, 10%);
+  }
+
+  @media only screen and (max-width: 768px) {
+    a {
+      color: white;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: $main-green;
+    }
+  }
+}

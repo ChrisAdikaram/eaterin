@@ -1,0 +1,15 @@
+{
+  "name": "eaterin-coming-soon",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0",
+    "parcel": "^2.0.0"
+  }
+}
